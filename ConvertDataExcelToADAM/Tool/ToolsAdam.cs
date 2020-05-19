@@ -19,13 +19,16 @@ namespace ConvertDataExcelToADAM.Tool
             {
                 if (!String.IsNullOrEmpty(row.Field<string>(3)))
                 {
-                    ExcelEnitity enitity = new ExcelEnitity();
-                    //enitity.SystemNumber = $"{num:000000000000}";
-                    enitity.SystemNumber = row.Field<string>(3);
-                    enitity.FileName = row.Field<string>(4);
-                    enitity.BookTitle = row.Field<string>(1);
-                    enitity.PublishingYear = row.Field<string>(2);
-                    listExcelOrigin.Add(enitity);
+                    if (!String.IsNullOrEmpty(row.Field<string>(4)))
+                    {
+                        ExcelEnitity enitity = new ExcelEnitity();
+                        //enitity.SystemNumber = $"{num:000000000000}";
+                        enitity.SystemNumber = row.Field<string>(3).Trim();
+                        enitity.FileName = row.Field<string>(4).Trim();
+                        enitity.BookTitle = row.Field<string>(1).Trim();
+                        enitity.PublishingYear = row.Field<string>(2).Trim();
+                        listExcelOrigin.Add(enitity);
+                    }
                 }
             }
             return listExcelOrigin;
@@ -56,7 +59,7 @@ namespace ConvertDataExcelToADAM.Tool
                 long ObjectSize = getInfoObjectSize(filePaths[i]);
                 for (int j = 0; j < files.Length; j++)
                 {
-                    if (Filename.Contains(files[j]))
+                    if (Filename.Contains(files[j].Trim()))
                     {
                         InfoFileEnitity enitity = new InfoFileEnitity();
                         enitity.Filename = getFileNameNoExtension(Filename);

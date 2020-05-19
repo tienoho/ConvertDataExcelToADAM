@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 using ConvertDataExcelToADAM.UserControlGui;
 
@@ -13,6 +14,7 @@ namespace ConvertDataExcelToADAM.GUI
 {
     public partial class Main : Form
     {
+        private string urlFileExcel = "https://drive.google.com/file/d/1qxPbpKE_9EnSdrb4_Bkg82k7LSsfqMzW/view?usp=sharing";
         public Main()
         {
             InitializeComponent();
@@ -53,6 +55,11 @@ namespace ConvertDataExcelToADAM.GUI
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnFileDemo_Click(object sender, EventArgs e)
+        {
+            Process.Start(urlFileExcel);
         }
     }
 }

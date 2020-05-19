@@ -39,7 +39,7 @@ namespace UploadPatronExcelAOF.Tool
                     {
                         dt.Columns.Add(firstRowCell.Text);
                     }
-                    // Đọc tất cả data bắt đầu từ row thứ 2
+                    // Đọc tất cả data bắt đầu từ row thứ 5
                     for (var rowNumber = 5; rowNumber <= workSheet.Dimension.End.Row; rowNumber++)
                     {
                         // Lấy 1 row trong excel để truy vấn
@@ -77,6 +77,29 @@ namespace UploadPatronExcelAOF.Tool
                 //excelPackage.Save();
                 excelPackage.SaveAs(new FileInfo(filePath));
                 //return excelPackage.Stream;
+            }
+        }
+        public void GetPathDirectoryAndWriteExcel<T>(List<T> list)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = "DanhSach";
+            saveFileDialog.DefaultExt = ".xlsx";
+            saveFileDialog.Filter = "excel file |*.xlsx";
+            DialogResult dialogResult = saveFileDialog.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                try
+                {
+                    new HandlingExcel().CreateExcelFile(list, filePath);
+                    MessageBox.Show("Xuất File thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    log.Info(filePath + "\tXuất File thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xuất Không thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    log.Error(ex.Message);
+                }
             }
         }
         //đếm số dòng của của DataGridView

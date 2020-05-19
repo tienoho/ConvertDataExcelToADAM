@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDataDemo = new System.Windows.Forms.Button();
+            this.btnCreatFileXml = new System.Windows.Forms.Button();
+            this.txtBrowserSaveFile = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnBrowserSaveFile = new System.Windows.Forms.Button();
             this.btnConvert = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,9 +48,7 @@
             this.lbCountListExcel = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvPatron = new System.Windows.Forms.DataGridView();
-            this.txtBrowserSaveFile = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnBrowserSaveFile = new System.Windows.Forms.Button();
+            this.btnExportExcelAddPatron = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -56,10 +57,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCreatFileXml);
             this.groupBox1.Controls.Add(this.txtBrowserSaveFile);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnBrowserSaveFile);
-            this.groupBox1.Controls.Add(this.btnDataDemo);
             this.groupBox1.Controls.Add(this.btnConvert);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label2);
@@ -70,35 +71,74 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(0, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(743, 222);
+            this.groupBox1.Size = new System.Drawing.Size(743, 214);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chuyển đổi tên ảnh";
             // 
-            // btnDataDemo
+            // btnCreatFileXml
             // 
-            this.btnDataDemo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDataDemo.Location = new System.Drawing.Point(584, 162);
-            this.btnDataDemo.Name = "btnDataDemo";
-            this.btnDataDemo.Size = new System.Drawing.Size(156, 38);
-            this.btnDataDemo.TabIndex = 115;
-            this.btnDataDemo.Text = "Dữ liệu mẫu";
-            this.btnDataDemo.UseVisualStyleBackColor = true;
-            this.btnDataDemo.Click += new System.EventHandler(this.BtnDataDemo_Click);
+            this.btnCreatFileXml.AutoSize = true;
+            this.btnCreatFileXml.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
+            this.btnCreatFileXml.Enabled = false;
+            this.btnCreatFileXml.FlatAppearance.BorderSize = 0;
+            this.btnCreatFileXml.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreatFileXml.ForeColor = System.Drawing.Color.White;
+            this.btnCreatFileXml.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreatFileXml.Location = new System.Drawing.Point(584, 160);
+            this.btnCreatFileXml.Name = "btnCreatFileXml";
+            this.btnCreatFileXml.Size = new System.Drawing.Size(157, 38);
+            this.btnCreatFileXml.TabIndex = 119;
+            this.btnCreatFileXml.Text = "5.Creat File ADAM";
+            this.btnCreatFileXml.UseVisualStyleBackColor = false;
+            this.btnCreatFileXml.Click += new System.EventHandler(this.btnCreatFileXml_Click);
+            // 
+            // txtBrowserSaveFile
+            // 
+            this.txtBrowserSaveFile.Enabled = false;
+            this.txtBrowserSaveFile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrowserSaveFile.Location = new System.Drawing.Point(131, 121);
+            this.txtBrowserSaveFile.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBrowserSaveFile.Name = "txtBrowserSaveFile";
+            this.txtBrowserSaveFile.Size = new System.Drawing.Size(436, 27);
+            this.txtBrowserSaveFile.TabIndex = 118;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(11, 126);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 17);
+            this.label4.TabIndex = 117;
+            this.label4.Text = "Thư mục lưu";
+            // 
+            // btnBrowserSaveFile
+            // 
+            this.btnBrowserSaveFile.Location = new System.Drawing.Point(584, 120);
+            this.btnBrowserSaveFile.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBrowserSaveFile.Name = "btnBrowserSaveFile";
+            this.btnBrowserSaveFile.Size = new System.Drawing.Size(156, 33);
+            this.btnBrowserSaveFile.TabIndex = 116;
+            this.btnBrowserSaveFile.Text = "3.Browser...";
+            this.btnBrowserSaveFile.UseVisualStyleBackColor = true;
+            this.btnBrowserSaveFile.Click += new System.EventHandler(this.btnBrowserSaveFile_Click);
             // 
             // btnConvert
             // 
             this.btnConvert.AutoSize = true;
             this.btnConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
+            this.btnConvert.Enabled = false;
             this.btnConvert.FlatAppearance.BorderSize = 0;
             this.btnConvert.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvert.ForeColor = System.Drawing.Color.White;
             this.btnConvert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConvert.Location = new System.Drawing.Point(410, 163);
+            this.btnConvert.Location = new System.Drawing.Point(410, 160);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(158, 38);
             this.btnConvert.TabIndex = 106;
-            this.btnConvert.Text = "Chuyển dữ liệu";
+            this.btnConvert.Text = "4.Convert";
             this.btnConvert.UseVisualStyleBackColor = false;
             this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
@@ -130,7 +170,7 @@
             this.btnChooseExcel.Name = "btnChooseExcel";
             this.btnChooseExcel.Size = new System.Drawing.Size(156, 33);
             this.btnChooseExcel.TabIndex = 90;
-            this.btnChooseExcel.Text = "Browser...";
+            this.btnChooseExcel.Text = "1.Browser...";
             this.btnChooseExcel.UseVisualStyleBackColor = true;
             this.btnChooseExcel.Click += new System.EventHandler(this.btnChooseExcel_Click);
             // 
@@ -163,7 +203,7 @@
             this.btnOpenDirectoryName.Name = "btnOpenDirectoryName";
             this.btnOpenDirectoryName.Size = new System.Drawing.Size(156, 33);
             this.btnOpenDirectoryName.TabIndex = 87;
-            this.btnOpenDirectoryName.Text = "Browser...";
+            this.btnOpenDirectoryName.Text = "2.Browser...";
             this.btnOpenDirectoryName.UseVisualStyleBackColor = true;
             this.btnOpenDirectoryName.Click += new System.EventHandler(this.btnOpenDirectoryName_Click);
             // 
@@ -192,7 +232,7 @@
             // lb_tongfile
             // 
             this.lb_tongfile.AutoSize = true;
-            this.lb_tongfile.Location = new System.Drawing.Point(631, 566);
+            this.lb_tongfile.Location = new System.Drawing.Point(411, 566);
             this.lb_tongfile.Name = "lb_tongfile";
             this.lb_tongfile.Size = new System.Drawing.Size(46, 16);
             this.lb_tongfile.TabIndex = 54;
@@ -201,7 +241,7 @@
             // lbCountListExcel
             // 
             this.lbCountListExcel.AutoSize = true;
-            this.lbCountListExcel.Location = new System.Drawing.Point(181, 566);
+            this.lbCountListExcel.Location = new System.Drawing.Point(3, 566);
             this.lbCountListExcel.Name = "lbCountListExcel";
             this.lbCountListExcel.Size = new System.Drawing.Size(46, 16);
             this.lbCountListExcel.TabIndex = 53;
@@ -222,8 +262,8 @@
             // 
             this.dgvPatron.AllowUserToAddRows = false;
             this.dgvPatron.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPatron.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPatron.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPatron.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPatron.Location = new System.Drawing.Point(3, 14);
             this.dgvPatron.Name = "dgvPatron";
@@ -232,42 +272,22 @@
             this.dgvPatron.Size = new System.Drawing.Size(392, 312);
             this.dgvPatron.TabIndex = 19;
             // 
-            // txtBrowserSaveFile
+            // btnExportExcelAddPatron
             // 
-            this.txtBrowserSaveFile.Enabled = false;
-            this.txtBrowserSaveFile.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrowserSaveFile.Location = new System.Drawing.Point(131, 121);
-            this.txtBrowserSaveFile.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBrowserSaveFile.Name = "txtBrowserSaveFile";
-            this.txtBrowserSaveFile.Size = new System.Drawing.Size(436, 27);
-            this.txtBrowserSaveFile.TabIndex = 118;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 126);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 17);
-            this.label4.TabIndex = 117;
-            this.label4.Text = "Thư mục lưu";
-            // 
-            // btnBrowserSaveFile
-            // 
-            this.btnBrowserSaveFile.Location = new System.Drawing.Point(584, 120);
-            this.btnBrowserSaveFile.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBrowserSaveFile.Name = "btnBrowserSaveFile";
-            this.btnBrowserSaveFile.Size = new System.Drawing.Size(156, 33);
-            this.btnBrowserSaveFile.TabIndex = 116;
-            this.btnBrowserSaveFile.Text = "Browser...";
-            this.btnBrowserSaveFile.UseVisualStyleBackColor = true;
-            this.btnBrowserSaveFile.Click += new System.EventHandler(this.btnBrowserSaveFile_Click);
+            this.btnExportExcelAddPatron.Location = new System.Drawing.Point(280, 562);
+            this.btnExportExcelAddPatron.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExportExcelAddPatron.Name = "btnExportExcelAddPatron";
+            this.btnExportExcelAddPatron.Size = new System.Drawing.Size(118, 28);
+            this.btnExportExcelAddPatron.TabIndex = 61;
+            this.btnExportExcelAddPatron.Text = "Export Excel";
+            this.btnExportExcelAddPatron.UseVisualStyleBackColor = true;
+            this.btnExportExcelAddPatron.Click += new System.EventHandler(this.btnExportExcelAddPatron_Click);
             // 
             // UCConvertDataXML
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnExportExcelAddPatron);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.lb_tongfile);
             this.Controls.Add(this.lbCountListExcel);
@@ -308,11 +328,12 @@
         private System.Windows.Forms.TextBox txtFileExcel;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnDataDemo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvPatron;
         private System.Windows.Forms.TextBox txtBrowserSaveFile;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBrowserSaveFile;
+        private System.Windows.Forms.Button btnExportExcelAddPatron;
+        private System.Windows.Forms.Button btnCreatFileXml;
     }
 }

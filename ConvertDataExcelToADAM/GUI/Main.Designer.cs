@@ -33,11 +33,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this._pnlRight = new System.Windows.Forms.Panel();
+            this.btnFileDemo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,8 +74,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.btnFileDemo);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.btnHome);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -94,31 +94,14 @@
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(2, 211);
+            this.button2.Location = new System.Drawing.Point(2, 232);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(179, 47);
             this.button2.TabIndex = 8;
             this.button2.Text = "               Setting";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(0, 165);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(184, 47);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "               New";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             // 
             // btnHome
             // 
@@ -167,6 +150,25 @@
             this._pnlRight.Size = new System.Drawing.Size(750, 629);
             this._pnlRight.TabIndex = 48;
             // 
+            // btnFileDemo
+            // 
+            this.btnFileDemo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFileDemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFileDemo.FlatAppearance.BorderSize = 0;
+            this.btnFileDemo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFileDemo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFileDemo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnFileDemo.Image = ((System.Drawing.Image)(resources.GetObject("btnFileDemo.Image")));
+            this.btnFileDemo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFileDemo.Location = new System.Drawing.Point(3, 175);
+            this.btnFileDemo.Name = "btnFileDemo";
+            this.btnFileDemo.Size = new System.Drawing.Size(179, 47);
+            this.btnFileDemo.TabIndex = 9;
+            this.btnFileDemo.Text = "         File Excel Demo";
+            this.btnFileDemo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFileDemo.UseVisualStyleBackColor = false;
+            this.btnFileDemo.Click += new System.EventHandler(this.btnFileDemo_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -197,9 +199,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         internal System.Windows.Forms.Button btnHome;
-        internal System.Windows.Forms.Button btnAdd;
         internal System.Windows.Forms.Button button1;
         internal System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel _pnlRight;
+        internal System.Windows.Forms.Button btnFileDemo;
     }
 }
